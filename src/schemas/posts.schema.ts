@@ -1,6 +1,6 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 import { Document } from "mongoose";
-import { User } from "src/users/schemas/users.schema";
+import {User} from "./users.schema"
 
 
 
@@ -17,7 +17,7 @@ export class Post extends Document{
     @Prop()
     body: string
 
-    @Prop({ type: Schema.Types.ObjectId, ref: 'User' })
+    @Prop({ type: [{ type: 'ObjectId', ref: 'User' }] })
     user: User;
 
 }
