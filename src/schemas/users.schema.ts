@@ -11,7 +11,7 @@ export class User extends Document {
     @Prop()
     username: string;
     
-    @Prop()
+    @Prop({ unique: true })
     email: string;
 
     @Prop({ type: [{ type: 'ObjectId', ref: 'Post' }] })
